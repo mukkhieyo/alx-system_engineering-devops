@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
-# Creates a mysqldump file and then compresses it into tarball
-mysqldump --all-databases --user=root --password="$1" > backup.sql
-tar -czf "$(date +'%d-%m-%Y').tar.gz" backup.sql 
+# dump, backup and compress my databases i
+mysqldump --all-databases -u root --password="$1" > backup.sql
+day=$(date +"%d")
+month=$(date +"%m")
+year=$(date +"%Y")
+file_name="$day-$month-$year.tar.gz"
+tar -czvf "$file_name" backup.sql

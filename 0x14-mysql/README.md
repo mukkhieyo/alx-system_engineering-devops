@@ -1,3 +1,1 @@
-#####MySQL
-
-This project is about installing MySQL 5.7 on our web servers
+# 0x14. MySQL
